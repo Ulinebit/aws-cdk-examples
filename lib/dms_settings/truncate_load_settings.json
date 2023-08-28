@@ -1,0 +1,41 @@
+{
+    "TargetMetadata" : {
+      "SupportLobs" : true,
+      "FullLobMode" : true,
+      "LimitedSizeLobMode": false,
+      "LobChunkSize":64,
+      "BatchApplyEnabled": true
+    },
+    "FullLoadSettings" : {
+      "TargetTablePrepMode": "TRUNCATE_BEFORE_LOAD",
+      "StopTaskCachedChangesNotApplied": true,
+      "MaxFullLoadSubTasks": 24,
+      "TransactionConsistencyTimeout": 1800,
+      "CommitRate": 50000
+    },
+    "Logging" : {
+      "EnableLogging" : true,
+      "LogComponents" : [
+      {"Id": "SOURCE_UNLOAD",
+        "Severity": "LOGGER_SEVERITY_DEFAULT"},
+      {"Id": "TARGET_LOAD",
+      "Severity": "LOGGER_SEVERITY_DEFAULT"},
+      {"Id": "TASK_MANAGER", 
+      "Severity": "LOGGER_SEVERITY_DEFAULT"},
+      {"Id": "SOURCE_CAPTURE",
+      "Severity": "LOGGER_SEVERITY_DEFAULT"},
+      {"Id": "TARGET_APPLY", 
+      "Severity": "LOGGER_SEVERITY_DEFAULT"}]
+    },
+    "ControlTablesSettings" : {
+      "StatusTableEnabled" : true
+    },
+    "ErrorBehavior" : {
+      "RecoverableErrorCount": -1,
+      "RecoverableErrorStopRetryAfterThrottlingMax": false,
+      "RecoverableErrorInterval": 5,
+      "RecoverableErrorThrottlingMax": 300,
+      "FullLoadIgnoreConflicts": false,
+      "TableErrorPolicy": "STOP_TASK"
+    }
+  }

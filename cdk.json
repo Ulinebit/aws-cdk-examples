@@ -49,6 +49,10 @@
     "@aws-cdk/aws-stepfunctions-tasks:enableEmrServicePolicyV2": true,
     "@aws-cdk/aws-ec2:restrictDefaultSecurityGroup": true,
     "@aws-cdk/aws-apigateway:requestValidatorUniqueId": true,
-    "@aws-cdk/aws-kms:aliasNameRef": true
+    "@aws-cdk/aws-kms:aliasNameRef": true,
+    "tags": {
+      "dataClassification": "restricted"
+    },
+    "dms_secret": "arn:aws:secretsmanager:your-region:your-acct-id:secret:your-secret-name"
   }
 }
